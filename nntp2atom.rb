@@ -69,6 +69,7 @@ atom_feed.feed(:xmlns => 'http://www.w3.org/2005/Atom') do |feed|
       entry.title(message[:subject])
       entry.summary(message[:body], :type => 'text')      
       entry.updated(message[:date].strftime("%Y-%m-%dT%H:%M:%SZ")) # needed to work with Google Reader.
+      entry.published(message[:date].strftime("%Y-%m-%dT%H:%M:%SZ")) 
       entry.author do |author|
         author.name(message[:author])
         author.email(message[:email])        
